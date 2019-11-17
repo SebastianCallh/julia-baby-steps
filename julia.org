@@ -1,0 +1,36 @@
+* Julia
+  This document aims to document some findings from my exploration of Julia.
+  
+  I use a Docker based Julia installation based of [[https://techytok.com/from-zero-to-julia-using-docker/][this tutorial]], and
+  use [[https://junolab.org/][Juno]] as my editor.
+  To mount files into the docker container run =docker run -it -v $(pwd):/opt/project=.
+
+  In addition, I configured [[https://timholy.github.io/Revise.jl/stable/config/#Using-Revise-by-default-1][Revise]] to be included automatically.
+
+** Notes  
+*** Plotting
+    - It is possible to switch between [[https://github.com/JuliaPlots/PlotThemes.jl][several themes]].
+    - There are multiple [[http://docs.juliaplots.org/latest/colors/][color atoms]] defined.
+
+** Issues
+   Being a very young language, there are several issues with
+   Julia. For the same reason, there is going to be stuff missing from
+   the ecosystem (compared to Python). Finally, some things are just
+   specific to Julia and might be worth noting down.
+
+*** Invalid redifinition of constant
+    You get this error when redefining a =struct=. There is
+    [[https://docs.julialang.org/en/v1/manual/faq/#How-can-I-modify-the-declaration-of-a-type-in-my-session?-1][a note of this]] in the official introduction, and some discussion on the
+    [[https://discourse.julialang.org/t/redefine-struct-when-working-with-repl/25942/7][Julia discourse]].
+
+** Queries
+   This section contains specific areas to investigate.
+
+*** Deep Learning
+    Deep learning in Julia seems to be largely focused around the
+    [[https://pkg.julialang.org/docs/Flux][Flux]] and [[https://pkg.julialang.org/docs/Knet/f4vSz/1.3.1/][Knet]].
+
+**** How to do batching? 
+
+*** Rest API
+    Hosting models behind a Restful API is desirable.
