@@ -31,6 +31,19 @@
     [[https://pkg.julialang.org/docs/Flux][Flux]] and [[https://pkg.julialang.org/docs/Knet/f4vSz/1.3.1/][Knet]].
 
 **** How to do batching? 
+     We can do everything with iterators! Having shuffled the data, do
+     something like =epochs = repeated((X, y), numEpochs)= followed by
+     =batches = partition(it, batchSize)=. Lovely and functional.
+
+**** GPU Support 
+     This is paramount to be able to do deep learning.
+     
 
 *** Rest API
-    Hosting models behind a Restful API is desirable.
+    It seems like [[https://github.com/GenieFramework/Genie.jl][Genie]] is the most popular web framework.
+**** TODO Serve a model from Genie
+    
+*** DataFrame 
+    There is a popular [[https://github.com/JuliaData/DataFrames.jl][DataFrames package]] dedicated to data frames. It
+    is important that it allows working with data efficiently. 
+**** TODO Do some data cleaning in 
